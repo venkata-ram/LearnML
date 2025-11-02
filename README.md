@@ -7,7 +7,7 @@ This repository contains Jupyter notebooks and resources for learning machine le
 
 ### Prerequisites
 
-- Python 3.8 or higher
+- Python 3.8 or higher (tested with Python 3.12)
 - pip (Python package installer)
 
 ### Installation
