@@ -7,6 +7,7 @@ This script introduces fundamental concepts in machine learning.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 
 # What is Machine Learning?
 print("=" * 60)
@@ -48,8 +49,11 @@ plt.xlabel('Feature 1')
 plt.ylabel('Feature 2')
 plt.title('Sample Data Visualization')
 plt.grid(True, alpha=0.3)
-plt.savefig('examples/01_introduction/data_visualization.png')
-print("\nVisualization saved to 'data_visualization.png'")
+
+# Save visualization in the same directory as the script
+output_path = os.path.join(os.path.dirname(__file__), 'data_visualization.png')
+plt.savefig(output_path)
+print(f"\nVisualization saved to '{os.path.basename(output_path)}'")
 
 print("\n" + "=" * 60)
 print("Key Concepts in Machine Learning:")

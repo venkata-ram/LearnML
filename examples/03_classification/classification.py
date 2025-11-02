@@ -8,6 +8,7 @@ This example uses logistic regression for binary classification.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -88,5 +89,8 @@ plt.legend()
 plt.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('examples/03_classification/classification.png')
-print("\nVisualization saved to 'classification.png'")
+
+# Save visualization in the same directory as the script
+output_path = os.path.join(os.path.dirname(__file__), 'classification.png')
+plt.savefig(output_path)
+print(f"\nVisualization saved to '{os.path.basename(output_path)}'")

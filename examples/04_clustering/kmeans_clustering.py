@@ -8,6 +8,7 @@ This example demonstrates K-Means clustering.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 from sklearn.cluster import KMeans
 from sklearn.datasets import make_blobs
 
@@ -60,8 +61,11 @@ axes[1].legend()
 axes[1].grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('examples/04_clustering/kmeans_clustering.png')
-print("\nVisualization saved to 'kmeans_clustering.png'")
+
+# Save visualization in the same directory as the script
+output_path = os.path.join(os.path.dirname(__file__), 'kmeans_clustering.png')
+plt.savefig(output_path)
+print(f"\nVisualization saved to '{os.path.basename(output_path)}'")
 
 # Elbow method to find optimal number of clusters
 print("\n" + "=" * 60)
@@ -83,5 +87,8 @@ plt.xlabel('Number of Clusters (K)')
 plt.ylabel('Inertia')
 plt.title('Elbow Method for Optimal K')
 plt.grid(True, alpha=0.3)
-plt.savefig('examples/04_clustering/elbow_method.png')
-print("\nElbow method visualization saved to 'elbow_method.png'")
+
+# Save elbow method visualization in the same directory as the script
+elbow_output_path = os.path.join(os.path.dirname(__file__), 'elbow_method.png')
+plt.savefig(elbow_output_path)
+print(f"\nElbow method visualization saved to '{os.path.basename(elbow_output_path)}'")

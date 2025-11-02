@@ -9,6 +9,7 @@ This example demonstrates common preprocessing techniques.
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 from sklearn.preprocessing import StandardScaler, MinMaxScaler, LabelEncoder
 from sklearn.impute import SimpleImputer
 
@@ -112,8 +113,12 @@ axes[1, 0].set_title('Normalized Data (0-1)')
 axes[1, 0].grid(True, alpha=0.3)
 
 # Distribution comparison
+salary_mean = df_imputed['salary'].mean()
+salary_std = df_imputed['salary'].std()
+salary_destandardized = df_standardized['salary'] * salary_std + salary_mean
+
 axes[1, 1].hist(df_imputed['salary'], bins=10, alpha=0.5, label='Original', color='blue')
-axes[1, 1].hist(df_standardized['salary'] * df_imputed['salary'].std() + df_imputed['salary'].mean(), 
+axes[1, 1].hist(salary_destandardized, 
                 bins=10, alpha=0.5, label='After Standardization', color='orange')
 axes[1, 1].set_xlabel('Salary')
 axes[1, 1].set_ylabel('Frequency')
@@ -122,8 +127,11 @@ axes[1, 1].legend()
 axes[1, 1].grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('examples/05_data_preprocessing/preprocessing.png')
-print("\nVisualization saved to 'preprocessing.png'")
+
+# Save visualization in the same directory as the script
+output_path = os.path.join(os.path.dirname(__file__), 'preprocessing.png')
+plt.savefig(output_path)
+print(f"\nVisualization saved to '{os.path.basename(output_path)}'")
 
 print("\n" + "=" * 60)
 print("Key Preprocessing Techniques Summary:")

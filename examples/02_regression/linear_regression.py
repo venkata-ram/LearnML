@@ -8,6 +8,7 @@ based on one or more input features.
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
@@ -61,5 +62,8 @@ plt.ylabel('y (Target)')
 plt.title('Linear Regression Example')
 plt.legend()
 plt.grid(True, alpha=0.3)
-plt.savefig('examples/02_regression/linear_regression.png')
-print("\nVisualization saved to 'linear_regression.png'")
+
+# Save visualization in the same directory as the script
+output_path = os.path.join(os.path.dirname(__file__), 'linear_regression.png')
+plt.savefig(output_path)
+print(f"\nVisualization saved to '{os.path.basename(output_path)}'")
