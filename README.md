@@ -59,6 +59,7 @@ The Jupyter interface will open in your default web browser. You can then:
 - `requirements.txt` - Python dependencies for Jupyter and ML libraries
 - `getting_started.ipynb` - Sample notebook to verify your setup
 - `.gitignore` - Configured to exclude Jupyter checkpoints and Python cache files
+- `JUPYTER_GUIDE.md` - Quick reference for Jupyter commands and shortcuts
 
 ### Next Steps
 
