@@ -1,0 +1,21 @@
+# Jupyter Notebook and JupyterLab
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+notebook>=7.0.0
+
+# Essential Machine Learning Libraries
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+scikit-learn>=1.3.0
+
+# Deep Learning (optional, can be uncommented when needed)
+# tensorflow>=2.13.0
+# torch>=2.0.0
+# torchvision>=0.15.0
+
+# Additional useful libraries
+scipy>=1.11.0
+plotly>=5.14.0
+ipywidgets>=8.0.0
